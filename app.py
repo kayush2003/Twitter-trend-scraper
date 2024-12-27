@@ -23,5 +23,4 @@ def run_script():
         return jsonify({"error": str(e)})
 
 if __name__ == "__main__":
-    from gunicorn.app.wsgiapp import run
     app.run(debug=True,port = 8080)
