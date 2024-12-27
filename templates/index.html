@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twitter Trends</title>
+    <script>
+        async function runScript() {
+            const response = await fetch("/run-script");
+            const data = await response.json();
+            if (data.error) {
+                alert("Error: " + data.error);
+                return;
+            }
+
+            const resultDiv = document.getElementById("results");
+            resultDiv.innerHTML = `
+                <h3>These are the most happening topics as on ${data.end_time}</h3>
+                <ul>
+                    <li>${data.trend1 || "N/A"}</li>
+                    <li>${data.trend2 || "N/A"}</li>
+                    <li>${data.trend3 || "N/A"}</li>
+                    <li>${data.trend4 || "N/A"}</li>
+                    <li>${data.trend5 || "N/A"}</li>
+                </ul>
+                <p>The IP address used for this query was ${data.ip_address}.</p>
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Twitter Trending Topics</h1>
+    <button onclick="runScript()">Click here to run the script</button>
+    <div id="results"></div>
+</body>
+</html>
+
+ 
