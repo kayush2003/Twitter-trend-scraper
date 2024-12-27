@@ -24,4 +24,4 @@ def run_script():
 
 if __name__ == "__main__":
     from gunicorn.app.wsgiapp import run
-    run(debug=True,port = 8080)
+    app.run(debug=True,port = 8080)
