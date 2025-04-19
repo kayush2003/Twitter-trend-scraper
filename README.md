@@ -36,4 +36,4 @@
    ```
 5. Access the web app at `http://localhost:8080`.
 
-[Output_Screenshot](https://github.com/user-attachments/assets/99c023fb-759e-4169-a232-0740cabb7c31)
+
